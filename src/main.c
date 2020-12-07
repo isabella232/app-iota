@@ -30,7 +30,7 @@ static void IOTA_main()
                 const unsigned int rx = io_exchange(CHANNEL_APDU | flags, 0);
 
                 // the device must not be locked
-                if (!os_global_pin_is_validated()) {
+                if (os_global_pin_is_validated() != BOLOS_TRUE) {
                     THROW(SW_DEVICE_IS_LOCKED);
                 }
 
