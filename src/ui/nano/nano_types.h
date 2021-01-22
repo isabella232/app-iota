@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include "os_io_seproxyhal.h"
+#include "ux.h"
 #include "iota/bundle.h"
 
 /// length of one text line

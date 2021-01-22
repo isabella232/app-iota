@@ -98,6 +98,7 @@ static inline void cx_hash(cx_hash_t *hash, int mode, const unsigned char *in,
 /* ----------------------------------------------------------------------- */
 
 #include "os.h"
+#include "cx.h"
 #endif // ifdef NO_BOLOS
 
 /* ----------------------------------------------------------------------- */

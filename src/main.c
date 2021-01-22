@@ -1,4 +1,5 @@
 #include "os_io_seproxyhal.h"
+#include "ux.h"
 #include "api.h"
 #include "iota_io.h"
 #include "ui/ui.h"
