@@ -22,7 +22,7 @@ include $(BOLOS_SDK)/Makefile.defines
 
 # Main app configuration
 
-APPNAME = "IOTA"
+APPNAME = "IOTA Legacy"
 APPVERSION_MAJOR = 0
 APPVERSION_MINOR = 5
 APPVERSION_PATCH = 6
@@ -131,4 +131,4 @@ include $(BOLOS_SDK)/Makefile.rules
 
 
 listvariants:
-	@echo VARIANTS COIN iota
+	@echo VARIANTS COIN iota_legacy
