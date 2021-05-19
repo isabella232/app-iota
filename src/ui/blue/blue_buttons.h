@@ -3,6 +3,7 @@
 
 #include "os.h"
 #include "os_io_seproxyhal.h"
+#include "ux.h"
 
 const bagl_element_t *bagl_ui_SETTINGS_blue_button(const bagl_element_t *e);
 const bagl_element_t *bagl_ui_DASHBOARD_blue_button(const bagl_element_t *e);
