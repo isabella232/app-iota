@@ -1,9 +1,9 @@
 #include "ui.h"
 #include <string.h>
 #include "os_io_seproxyhal.h"
+#include "ux.h"
 #include "api.h"
 #include "iota/addresses.h"
-#include "nano/nano_core.h"
 
 #define TICKS_PER_SECOND 10
 
@@ -11,28 +11,11 @@
 #define UI_TIMEOUT_SECONDS 3
 #define UI_TIMEOUT_INTERACTIVE_SECONDS 100
 
-#define WAIT_EVENT()                                                           \
-    io_seproxyhal_spi_recv(G_io_seproxyhal_spi_buffer,                         \
-                           sizeof(G_io_seproxyhal_spi_buffer), 0)
-
 static uint16_t timer;
 
 void ui_force_draw()
 {
-    bool display_event_occurred = false;
-
-    while (!UX_DISPLAYED()) {
-        UX_DISPLAY_NEXT_ELEMENT();
-        WAIT_EVENT();
-        display_event_occurred = true;
-    }
-
-    // this is only necessary, if anything has actually been displayed
-    if (display_event_occurred) {
-        // if everything is in the buffer, the next general status renders it
-        io_seproxyhal_general_status();
-        WAIT_EVENT();
-    }
+    UX_WAIT_DISPLAYED();
 }
 
 void ui_timeout_tick()
